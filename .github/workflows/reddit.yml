@@ -9,9 +9,25 @@ jobs:
     strategy:
       matrix:
         subreddit:
-          - newrelic
           - devops
           - sysadmin
+          - kubernetes
+          - Python
+          - ruby
+          - aws
+          - golang
+          - webdev
+          - csharp
+          - java
+          - dotnet
+          - node
+          - javascript
+          - PHP
+          - programming
+          - learnprogramming
+          - AZURE
+          - k8s
+          - googlecloud
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
