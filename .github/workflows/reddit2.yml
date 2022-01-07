@@ -1,4 +1,4 @@
-name: Check for New Reddit Posts specifically on r/newrelic and Add to Orbit
+name: Check for New Reddit Posts and Add to Orbit
 on:
   schedule:
     - cron: "0 * * * *"
@@ -6,13 +6,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        subreddit:
+          - newrelic
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npx @orbit-love/reddit --posts --comments --hours=1 --subreddit=newrelic
+      - run: npx @orbit-love/reddit --posts --comments --hours=1 --subreddit "${{ matrix.subreddit }}"
         name: 'Get Posts & Add to Orbit'
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID}}
