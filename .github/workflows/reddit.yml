@@ -28,6 +28,8 @@ jobs:
           - AZURE
           - k8s
           - googlecloud
+          - Splunk
+          - datadog
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
