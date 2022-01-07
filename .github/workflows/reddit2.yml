@@ -1,4 +1,4 @@
-name: Check for New Reddit Posts and Add to Orbit
+name: Check for New r/newrelic subreddit Posts and Add to Orbit
 on:
   schedule:
     - cron: "0 * * * *"
