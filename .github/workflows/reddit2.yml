@@ -6,17 +6,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        subreddit:
-          - newrelic
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: npx @orbit-love/reddit --posts --hours=1 --subreddit "${{ matrix.subreddit }}"
+      - run: npx @orbit-love/reddit --posts --hours=1 --subreddit=newrelic
         name: 'Get Posts & Add to Orbit'
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID}}
