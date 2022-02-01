@@ -30,6 +30,18 @@ jobs:
           - googlecloud
           - OpenTelemetry
           - Web
+          - softwareengineering
+          - sre
+          - react
+          - developer
+          - Monitoring
+          - devrel 
+          - rails
+          - rubyonrails 
+          - softwaredevelopment
+          - SQL
+          - MachineLearning
+          - engineering
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
